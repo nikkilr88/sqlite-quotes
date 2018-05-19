@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/admin.css">
+    <title>Admin Panel</title>
+</head>
+<body>
+
+    <form action="/logout" method="GET">
+        <button>Logout</button>
+    </form>
+    <a href="/api/add">Add quote</a>
+
+    <table cellspacing=0>
+        <thead>
+            <td>ID</td>
+            <td>Text</td>
+            <td>Author</td>
+            <td>Category</td>
+        </thead>
+        <tbody>
+            <% quotes.forEach(quote => { %>
+                <tr>
+                    <td><%= quote.rowid %></td>
+                    <td><%= quote.text %></td>
+                    <td><%= quote.author %></td>
+                    <td><%= quote.category %></td>
+                    <td>
+                        <form action="/api/<%= quote.rowid %>/del?_method=DELETE" method="POST">
+                            <button>Del</button>
+                        </form>
+                        <a href="/api/<%= quote.rowid %>">Edit</a>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>
