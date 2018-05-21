@@ -10,13 +10,13 @@
 </head>
 <body>
     <form action="/api" method="POST" id="quoteForm">
-        <select name="category" id="category">
-            <option value="category" disabled selected>category</option>
+        <select required name="category" id="category">
+            <option value="">category</option>
             <option value="funny">funny</option>
             <option value="motivational">motivational</option>
         </select>
-        <textarea name="text" id="text" placeholder="quote"></textarea>
-        <input type="text" name="author" id="author" placeholder="author">
+        <textarea name="text" id="text" placeholder="quote" required></textarea>
+        <input type="text" name="author" id="author" placeholder="author" required>
         <input type="submit" value="Add Quote">
     </form>
 </body>
