@@ -1,0 +1,28 @@
+form {
+    margin: 100px auto;
+    display: block;
+    width: 400px;
+}
+
+input[type=text],
+input[type=password] {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+    color: #777;
+    border-radius: 5px;
+}
+
+button,
+input[type=submit] {
+    border: none;
+    color: #fff;
+    background: #2980b9;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
