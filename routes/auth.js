@@ -22,7 +22,7 @@ router.post('/login', function (req, res) {
 // ADMIN LOGOUT
 router.get('/logout', (req, res) => {
     req.session.destroy();
-    res.send('Logged out - Go <a href="/">back</a>');
+    res.send('Admin logged out');
 });
 
 // ADMIN PANEL
