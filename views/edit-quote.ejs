@@ -18,7 +18,7 @@
                     <option value="<%= option %>" <%= (option == quote.category) ? "selected" : (option == 'category' ? "disabled" : "") %>><%= option %></option>
                 <% }) %>
         </select>
-        <input type="text" name="text" id="text" value="<%= quote.text %>">
+        <textarea name="text" id="text"><%= quote.text %></textarea>
         <input type="text" name="author" id="author" value="<%= quote.author %>">
         <input type="submit" value="Save Quote">
     </form>
