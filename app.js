@@ -17,7 +17,7 @@ app.use(methodOverride('_method'));
 
 // http://www.codexpedia.com/node-js/a-very-basic-session-auth-in-node-js-with-express-js/
 app.use(session({
-    secret: '000-APK-0330',
+    secret: process.env.SECRET,
     resave: true,
     saveUninitialized: true
 }));
