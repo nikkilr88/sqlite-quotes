@@ -39,11 +39,16 @@ nav>* {
 .wrapper {
     display: table;
     margin: 50px auto;
+    width: 90vw;
 }
 
 #prev,
 #next {
     margin: 5px;
+    padding: 5px;
+    border: none;
+    background: #2980b9;
+    color: #fff;
 }
 
 .wrapper button:disabled {
@@ -52,6 +57,7 @@ nav>* {
 
 table {
     text-align: center;
+    width: 100%;
 }
 
 table a,
