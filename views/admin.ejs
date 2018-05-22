@@ -20,31 +20,88 @@
       </button>
     </nav>
 
-    <table cellspacing=0>
-        <thead>
-            <td>ID</td>
-            <td>Text</td>
-            <td>Author</td>
-            <td>Category</td>
-        </thead>
-        <tbody>
-            <% quotes.forEach(quote => { %>
+    <div class="wrapper">
+        <button id="prev" disabled><<</button>
+        <button id="next">>></button>
+        <table cellspacing=0>
+            <thead>
+                <td>ID</td>
+                <td>Text</td>
+                <td>Author</td>
+                <td>Category</td>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    
+    <script>
+
+        const table = document.querySelector('table tbody');
+        const next = document.querySelector('#next');
+        const prev = document.querySelector('#prev');
+
+        const quotes = <%-JSON.stringify(quotes)%>;
+
+        let total = quotes.length;
+        let perPage = 5;
+
+        let stop = perPage;
+        let start = 0;
+
+        // ADD EVENT LISTENERS
+        next.addEventListener('click', () => {
+            updateQuery('r');
+            display(quotes);
+        });
+
+        prev.addEventListener('click', () => {
+            updateQuery('l');
+            display(quotes);
+        });
+
+        // BASIC PAGINATION
+        function updateQuery(direc) {
+            // Increase/decrease start and stop by perPage value
+            start = (direc === 'r') ? start += perPage : start -= perPage;
+            stop = (direc === 'r') ? stop += perPage : stop -= perPage;
+        
+            // Enable/disable nav buttons
+            next.disabled = (stop >= total) ? true : false;
+            prev.disabled = (start <= 0) ? true : false;
+        }
+
+        function display(quotes) {
+            let html = '';
+
+            for (let i = start; i < stop; i++) {
+                if(!quotes[i]) break;
+                html += createRow(quotes[i].rowid, quotes[i].author, quotes[i].text, quotes[i].category);
+            }
+
+            table.innerHTML = html;
+        }
+
+        function createRow(rowid, author, quote, category) {
+            return `
                 <tr>
-                    <td><%= quote.rowid %></td>
-                    <td><%= quote.text %></td>
-                    <td><%= quote.author %></td>
-                    <td><%= quote.category %></td>
+                    <td>${rowid}</td>
+                    <td>${quote}</td>
+                    <td>${author}</td>
+                    <td>${category}</td>
                     <td>
                         <button class="edit">
-                            <a href="/api/<%= quote.rowid %>">Edit</a>
+                            <a href="/api/${rowid}">Edit</a>
                         </button>
-                        <form action="/api/<%= quote.rowid %>/del?_method=DELETE" method="POST">
+                        <form action="/api/${rowid}/del?_method=DELETE" method="POST">
                             <button class="del">Del</button>
                         </form>
                     </td>
                 </tr>
-            <% }); %>
-        </tbody>
-    </table>
+            `;
+        }
+
+        display(quotes);
+
+    </script>
 </body>
 </html>
