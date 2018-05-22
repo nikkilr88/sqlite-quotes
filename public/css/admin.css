@@ -41,7 +41,8 @@ nav>* {
     margin: 50px auto;
 }
 
-.wrapper button {
+#prev,
+#next {
     margin: 5px;
 }
 
