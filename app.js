@@ -28,7 +28,7 @@ app.use('/', authRoutes);
 
 // LANDING PAGE
 app.get('/', (req, res) => {
-    res.render('index');
+    res.sendFile('index.html');
 });
 
 // SERVER SHIZZ
