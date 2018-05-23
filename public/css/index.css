@@ -1,53 +1,155 @@
 body {
-    text-align: center;
-    font-family: sans-serif;
+    margin: 0;
+    font-family: 'Roboto';
     color: #2b2b2b;
+    font-size: 18px;
+    color: #333;
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-header {
-    padding: 50px;
-    background: #2b2b2b;
-    color: #fcfcfc;
-}
-
-header h1,
-header h3 {
-    font-weight: 100;
 }
 
 h1 {
     font-size: 3em;
+    font-weight: 100;
+    margin: 0;
+    font-family: 'Segoe UI';
+    font-size: 80px;
 }
 
 h2 {
-    padding: 50px ;
+    font-weight: 300;
+    width: 650px;
+    margin: 30px auto 50px auto;
+    font-family: 'Segoe UI';
+    font-size: 45px;
+}
+
+h3 {
+    font-weight: 400;
+    font-family: 'Segoe UI';
+    font-size: 45px;
+}
+
+p {
+    font-family: 'Open Sans';
     font-weight: 100;
+    font-size: 28px;
+    margin: 35px 0 100px 0;
 }
 
-/* TABLE */
-table {
-    margin: 0 auto;
+a {
+    text-decoration: none;
+    border-bottom: 1px dotted #FFF;
+    background: #F55688;
+    color: #FFF;
+    padding: 0 8px;
 }
 
-table thead {
-    font-weight: bold;
+small {
+    font-size: 14px;
 }
 
-table td {
+button {
+    border: none;
+    background: #F90854;
+    color: #fff;
+    padding: 25px 45px;
+    font-size: 1.2em;
+    cursor: pointer;
+    outline: none;
+}
+
+header {
+    padding: 20vh 0 10vh 0;
+    text-align: center;
+}
+
+section {
+    text-align: center;
+    margin: 50px auto;
+}
+
+nav {
+    position: fixed;
+    right: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 50px;
+    text-align: right;
+    overflow: auto;
+    border-bottom: 1px solid #ccc;
+    color: #999;
+    background: #FFF;
+    font-weight: 400;
+}
+
+nav span  {
+    display: inline-block;
     padding: 15px;
 }
 
-table tr {
-    background: #eee;
+nav span:hover {
+    background: #F90854;
+    color: #FFF;
+    cursor: pointer;
 }
 
-table small {
-    color: #999;
+.logo {
+    position: fixed;
+    display: block;
+    left: 50px;
+    top: 15px;
+    height: 50px;
+    z-index: 999;
+    cursor: pointer;
 }
 
+#logo-grey:hover {
+    opacity: 0;
+}
+
+.arrow {
+    display: block;
+    margin-left: 48vw;
+}
+
+.howTo {
+    width: 650px;
+    overflow: hidden;
+}
+
+.box {
+    position: relative;
+    background: #F90854;
+    color: #fff;
+    float: left;
+    width: 47%;
+    height: 200px;
+    margin: 1.5%;
+}
+
+.box p {
+    padding: 10px 0;
+    font-size: 1.1em;
+    font-weight: normal;
+}
+
+.box > div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 0;
+    background: #F55688;
+}
+
+footer {
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    color: #CCC;
+}
