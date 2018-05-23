@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/index.css">
+    <title>Home</title>
+</head>
+<body>
+    <!-- NAV -->
+    <nav>
+        <span>Learn More</span>
+        <span>Request A Quote</span>
+    </nav>
+    
+    <img class="logo" id="logo-color" src="img/quote-logo.png">
+    <img class="logo" id="logo-grey" src="img/quote-logo-grey.png">
+
+    <!-- HERO -->
+    <header>
+        <h1>The Quote API</h1>
+        <h2>A simple random quote API perfect for FCC projects.</h2>
+        <button>Get Started!</button>
+    </header>
+
+    <img class="arrow" src="img/arrow.png" alt="arrow">
+
+    <!-- HOW TO -->
+    <section class="howTo">
+        <h3>How does it work?</h3>
+        <p>It's pretty simple. All you need to do is make a GET request to <a href="/api" target="_blank">/api</a>, and you'll get back a response with some awesome quotes.</p>
+
+        <div class="box">
+            <p>Want to get all of the quotes without any filters?</p>
+            <div class="url">
+                https://quoteapi.glitch.me/api
+            </div>
+        </div>
+        <div class="box">
+            <p>Just want one random quote? Query params to the rescue! <br><small>default limit is 10</small></p>
+            <div class="url">
+                /api?limit=1
+            </div>
+        </div>
+        <div class="box">
+            <p>Looking to filter by a specific category? <br><small>motivational, funny, geek</small></p>
+            <div class="url">
+                /api?category=funny
+            </div>
+        </div>
+        <div class="box">
+            <p>You can even combine multiple query parameters...</p>
+            <div class="url">
+                /api?category=funny&limit=1
+            </div>
+        </div>
+    </section>
+       
+    <!-- FOOTER -->
+    <footer> 
+        Created by Nikki L.R. with [heart]
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
