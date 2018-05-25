@@ -32,11 +32,12 @@ router.get('/add', verifyAdmin, (req, res) => {
 // CREATE QUOTE
 router.post('/', verifyAdmin, (req, res) => {
     db.run(
-        'INSERT INTO quotes VALUES ($text,$author,$category)',
+        'INSERT INTO quotes VALUES ($text,$author,$category,$date)',
         {
             $text: req.body.text,
             $author: req.body.author,
-            $category: req.body.category
+            $category: req.body.category,
+            $date: Date.now()
         },
         err => {
             if (err) {
@@ -64,12 +65,13 @@ router.get('/:id', verifyAdmin, (req, res) => {
 // UPDATE QUOTE
 router.put('/:id', verifyAdmin, (req, res) => {
      db.run(
-         'UPDATE quotes SET text=$text, author=$author, category=$category WHERE rowid IS $id', 
+         'UPDATE quotes SET text=$text, author=$author, category=$category, last_modified=$date WHERE rowid IS $id', 
          {
              $id: req.params.id,
              $text: req.body.text,
              $author: req.body.author,
-             $category: req.body.category
+             $category: req.body.category,
+             $date: Date.now()
          },
          err => {
              if (err) {
