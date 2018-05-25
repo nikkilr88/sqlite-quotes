@@ -20,7 +20,7 @@ router.post('/login', function (req, res) {
 });
 
 // ADMIN LOGOUT
-router.get('/logout', (req, res) => {
+router.get('/logout', verifyAdmin, (req, res) => {
     req.session.destroy();
     res.send('Admin logged out');
 });
