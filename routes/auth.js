@@ -31,7 +31,7 @@ router.get('/admin', verifyAdmin, (req, res) => {
         'SELECT text, author, category, last_modified, rowid FROM quotes '+
         'ORDER BY last_modified DESC',
         (err, quotes) => {
-\            res.render('admin', {
+            res.render('admin', {
                 quotes
             });
         });
