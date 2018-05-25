@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Roboto';
+    font-family: 'Open Sans';
     color: #2b2b2b;
     font-size: 18px;
     color: #333;
@@ -22,14 +22,15 @@ h1 {
 
 h2 {
     font-weight: 300;
-    width: 650px;
+    max-width: 650px;
+    width: 95%;
     margin: 30px auto 50px auto;
     font-family: 'Segoe UI';
     font-size: 45px;
 }
 
 h3 {
-    font-weight: 400;
+    font-weight: 200;
     font-family: 'Segoe UI';
     font-size: 45px;
 }
@@ -71,7 +72,8 @@ header {
 section {
     text-align: center;
     margin: 50px auto 100px auto;
-    width: 650px;
+    max-width: 650px;
+    width: 100%;
 }
 
 nav {
@@ -152,5 +154,19 @@ footer {
     padding: 30px 0;
     text-align: center;
     border-top: 1px solid #ccc;
-    color: #CCC;
+    color: #999;
+}
+
+#comingsoon {
+    max-width: 400px;
+    width: 90%;
+}
+
+@media only screen and (max-width: 650px) {
+    .box {
+        float: none;
+        width: 95%;
+        margin: 0 auto;
+        height: 175px;
+    }
 }
