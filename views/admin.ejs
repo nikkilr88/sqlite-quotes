@@ -13,17 +13,20 @@
 <body>
     <nav>
       <form action="/logout" method="GET">
-        <button><i class="fas fa-sign-out-alt"></i> Logout</button>
+        <button title="logout"><i class="fas fa-sign-out-alt"></i></button>
       </form>
-      <button>
-        <a href="/api/add"><i class="fas fa-plus-square"></i> Add quote</a>
+      <button title="api">
+        <a href="/api/" target="_blank"><i class="fas fa-external-link-square-alt"></i></a>
       </button>
     </nav>
 
     <div class="wrapper">
-        <button id="prev" disabled><<</button>
-        <button id="next">>></button>
-        <table cellspacing=0>
+        <button id="prev" disabled><i class="fas fa-arrow-left"></i></button>
+        <button id="next"><i class="fas fa-arrow-right"></i></button>
+        <button id="add">
+            <a href="/api/add"><i class="fas fa-plus-square"></i> Add quote</a>
+        </button>
+        <table cellspacing="0">
             <thead>
                 <td>ID</td>
                 <td>Text</td>
