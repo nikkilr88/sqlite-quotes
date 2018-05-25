@@ -28,10 +28,10 @@ router.get('/logout', (req, res) => {
 // ADMIN PANEL
 router.get('/admin', verifyAdmin, (req, res) => {
     db.all(
-        'SELECT text, author, category, rowid FROM quotes '+
-        'ORDER BY rowid DESC',
+        'SELECT text, author, category, last_modified, rowid FROM quotes '+
+        'ORDER BY last_modified DESC',
         (err, quotes) => {
-            res.render('admin', {
+\            res.render('admin', {
                 quotes
             });
         });
