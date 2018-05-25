@@ -13,7 +13,7 @@
 <body>
     <form action="/api/<%= quote.rowid %>?_method=PUT" method="POST">
         <select name="category" id="category">
-            <% let options = ['category','funny','motivational'] %>
+            <% let options = ['category','funny','motivational','geek'] %>
                <% options.forEach(option => { %>
                     <option value="<%= option %>" <%= (option == quote.category) ? "selected" : (option == 'category' ? "disabled" : "") %>><%= option %></option>
                 <% }) %>
