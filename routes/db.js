@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     let where = 'WHERE category IS $category ';
 
     db.all(
-        'SELECT * FROM quotes ' +
+        'SELECT text, author, category FROM quotes ' +
         (req.query.category == undefined ? '' : where) +
         'ORDER BY RANDOM() LIMIT $limit',
         {
