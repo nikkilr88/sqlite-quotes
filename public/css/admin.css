@@ -2,6 +2,8 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    min-height: 100vh;
 }
 
 * {
@@ -15,25 +17,24 @@ button {
     cursor: pointer;
 }
 
-nav a,
+nav a {
+    text-decoration: none;
+    color: #ccc;
+}
+
 nav button {
-    padding: 5px 3px;
     color: #ccc;
     background: none;
-    text-decoration: none;
     border: none;
+    font-size: 16px;
+    display: block;
+    margin: 20px 15px;
 }
 
 nav {
     overflow: auto;
-    width: 100%;
+    min-height: 100%;
     background: #2b2b2b;
-    padding: 0 25px;
-}
-
-nav>* {
-    float: right;
-    margin: 5px;
 }
 
 .wrapper {
@@ -47,9 +48,9 @@ nav>* {
 #add {
     margin: 5px;
     padding: 5px;
-    border: none;
     background: #2980b9;
     color: #fff;
+    border: 1px solid #2980b9;
 }
 
 #add {
@@ -66,9 +67,19 @@ nav>* {
     opacity: 0.5;
 }
 
+.pageInfo {
+    margin: 0 15px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #e1e1e1;
+    color: #999;
+    font-size: 14px;
+}
+
 table {
     text-align: center;
     width: 100%;
+    margin: 25px 0;
 }
 
 table a,
@@ -80,19 +91,28 @@ table button {
 }
 
 table thead {
-    font-weight: bold;
+    color: #444;
 }
 
 table tbody tr:nth-child(odd) {
-    background: #eee;
+    background: #f1f1f1;
 }
 
 table td {
     padding: 15px;
+    color: #4e4e4e;
 }
 
 table tr form {
     display: inline;
+}
+
+table .buttons {
+    opacity: 0;
+}
+
+table tr:hover .buttons {
+    opacity: 1;
 }
 
 .del {
