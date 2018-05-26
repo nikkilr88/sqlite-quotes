@@ -23,6 +23,9 @@
     <div class="wrapper">
         <button id="prev" disabled><i class="fas fa-arrow-left"></i></button>
         <button id="next"><i class="fas fa-arrow-right"></i></button>
+
+        <span class="pageInfo"></span>
+        
         <button id="add">
             <a href="/api/add"><i class="fas fa-plus-square"></i> Add quote</a>
         </button>
@@ -40,49 +43,62 @@
     <script>
 
         const table = document.querySelector('table tbody');
-        const next = document.querySelector('#next');
-        const prev = document.querySelector('#prev');
+            const next = document.querySelector('#next');
+            const prev = document.querySelector('#prev');
+            const pageInfo = document.querySelector('.pageInfo');
 
-        const quotes = <%-JSON.stringify(quotes)%>;
+            const quotes = <%-JSON.stringify(quotes) %>;
 
-        let total = quotes.length;
-        let perPage = 5;
+            let total = quotes.length;
+            let perPage = 5;
 
-        let stop = perPage;
-        let start = 0;
+            let stop = perPage;
+            let start = 0;
 
-        // ADD EVENT LISTENERS
-        next.addEventListener('click', () => {
-            updateQuery('r');
-            display(quotes);
-        });
+            let totalPages = Math.ceil(total / perPage);
+            let currPage = 1;
 
-        prev.addEventListener('click', () => {
-            updateQuery('l');
-            display(quotes);
-        });
 
-        // BASIC PAGINATION
-        function updateQuery(direc) {
-            // Increase/decrease start and stop by perPage value
-            start = (direc === 'r') ? start += perPage : start -= perPage;
-            stop = (direc === 'r') ? stop += perPage : stop -= perPage;
-        
-            // Enable/disable nav buttons
-            next.disabled = (stop >= total) ? true : false;
-            prev.disabled = (start <= 0) ? true : false;
-        }
+            // ADD EVENT LISTENERS
+            next.addEventListener('click', () => {
+                currPage++;
+                updateQuery('r');
+                display(quotes);
+            });
 
-        function display(quotes) {
-            let html = '';
+            prev.addEventListener('click', () => {
+                currPage--;
+                updateQuery('l');
+                display(quotes);
+            });
 
-            for (let i = start; i < stop; i++) {
-                if(!quotes[i]) break;
-                html += createRow(quotes[i].rowid, quotes[i].author, quotes[i].text, quotes[i].category);
+            // DISPLAY PAGE NUMBER
+            function displayPage(current, total) {
+                pageInfo.innerText = 'Page ' + current + ' of ' + total;
             }
 
-            table.innerHTML = html;
-        }
+            // BASIC PAGINATION
+            function updateQuery(direc) {
+                // Increase/decrease start and stop by perPage value
+                start = (direc === 'r') ? start += perPage : start -= perPage;
+                stop = (direc === 'r') ? stop += perPage : stop -= perPage;
+
+                // Enable/disable nav buttons
+                next.disabled = (stop >= total) ? true : false;
+                prev.disabled = (start <= 0) ? true : false;
+            }
+
+            function display(quotes) {
+                let html = '';
+
+                for (let i = start; i < stop; i++) {
+                    if (!quotes[i]) break;
+                    html += createRow(quotes[i].rowid, quotes[i].author, quotes[i].text, quotes[i].category);
+                }
+
+                table.innerHTML = html;
+                displayPage(currPage, totalPages);
+            }
 
         function createRow(rowid, author, quote, category) {
             return `
