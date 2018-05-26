@@ -63,6 +63,31 @@ const quotes = [
         text: "Accept who you are. Unless you’re a serial killer.",
         author: "Ellen DeGeneres",
         category: "funny"
+    },
+    {
+        text: "Connect with those who remind you who you are.",
+        author: "Ralph Smart",
+        category: "motivational"
+    },
+    {
+        text: "People's opinions of us will always change, but how we see ourselves will stay with us forever.",
+        author: "Ralph Smart",
+        category: "motivational"
+    },
+    {
+        text: "I have come here to chew bubblegum and kick ass. And I'm all out of bubblegum.",
+        author: "Nada",
+        category: "tv/movies"
+    },
+    {
+        text: "I find your lack of faith disturbing.",
+        author: "Darth Vader",
+        category: "tv/movies"
+    },
+    {
+        text: "Remember, concentrate on the moment. Feel, don't think. Use your instincts.",
+        author: "Qui-Gon Jinn",
+        category: "tv/movies"
     }
 ];
 
