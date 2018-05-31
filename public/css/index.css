@@ -119,6 +119,7 @@ nav span:hover {
 .arrow {
     display: block;
     margin-left: 48vw;
+    height: 250px;
 }
 
 .howTo {
