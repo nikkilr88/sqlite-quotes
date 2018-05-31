@@ -4,13 +4,15 @@ const express = require('express'),
       session = require('express-session'),
       methodOverride = require('method-override'),
       dbRoutes = require('./routes/db'),
-      authRoutes = require('./routes/auth')
-      path = require('path');
+      authRoutes = require('./routes/auth'),
+      path = require('path'),
+      { allowCrossOrigin } = require('./middleware');
  
 
 // INITIAL SETUP
 require('dotenv').config()
 app.set('view engine', 'ejs');
+app.use(allowCrossOrigin);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(methodOverride('_method'));
