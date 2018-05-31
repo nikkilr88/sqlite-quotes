@@ -54,7 +54,8 @@ input[type=submit] {
 }
 
 .bg {
-    background: url('https://images.unsplash.com/photo-1518050947974-4be8c7469f0c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0f8771b31190f1396c9aba686a5f729c&auto=format&fit=crop&w=375&q=80') center;
+    background: url('/img/bg.jpg') center;
+    background-size: cover;
     width: 65px;
     opacity: 0.5;
 }
