@@ -1,7 +1,17 @@
+* {
+    maring: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 form {
+    width: 600px;
     margin: 100px auto;
-    display: block;
-    width: 400px;
+}
+
+label {
+    font-family: sans-serif;
+    color: #999;
 }
 
 input[type=text],
@@ -27,4 +37,32 @@ input[type=submit] {
     border-radius: 5px;
     padding: 10px 15px;
     cursor: pointer;
+}
+
+#btn-login {
+    background: #ff4757;
+}
+
+#login {
+    flex: 1;
+    padding: 100px;
+    margin: 0;
+}
+
+#login-page {
+    background: whitesmoke;
+}
+
+.bg {
+    background: url('https://images.unsplash.com/photo-1518050947974-4be8c7469f0c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0f8771b31190f1396c9aba686a5f729c&auto=format&fit=crop&w=375&q=80') center;
+    width: 65px;
+    opacity: 0.5;
+}
+
+.wrapper {
+    width: 600px;
+    margin: 100px auto;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+    background: #fff;
+    display: flex;
 }
