@@ -82,6 +82,14 @@ table {
     margin: 25px 0;
 }
 
+table .buttons {
+    opacity: 0;
+}
+
+table tr:hover .buttons {
+    opacity: 1;
+}
+
 table a,
 table button {
     border: none;
